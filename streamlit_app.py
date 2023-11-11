@@ -176,7 +176,7 @@ def run_conversation(prompt):
     functions=functions,
     function_call="auto")
     st.write(response)
-    response_message = response["choices"][0]["message"]
+    response_message = response.get("message")
 
     if response_message.get("function_call"):
         available_functions = {
