@@ -196,7 +196,12 @@ def run_conversation(prompt):
                 "content": function_response,
             }
         )  
-        return function_response 
+
+        second_response = openai.chat.completions.create(
+        model="gpt-3.5-turbo-1106",
+        messages=messages,
+                )  # get a new response from the model where it can see the function response
+        return second_response
         
 st.set_page_config(page_title='AI-POWERED NCREIF QUERY TOOL')
 st.title('AI-POWERED NCREIF QUERY TOOL')
