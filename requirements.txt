@@ -1,4 +1,4 @@
-openai=1.0
+openai=1.2.3
 requests
 pydantic
 streamlit-pydantic
