@@ -170,12 +170,12 @@ def run_conversation(prompt):
     ]
     
     
-    response = client.chat.completions.create(model="gpt-4-1106-preview",
+    response = client.Completion.create(model="gpt-4-1106-preview",
     temperature = .5,
     messages=messages,
     functions=functions,
     function_call="auto")
-    response_message = response["choices"][0]["text"]
+    response_message = response["choices"][0]["message"]
 
     if response_message.get("function_call"):
         available_functions = {
