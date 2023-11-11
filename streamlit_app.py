@@ -176,8 +176,8 @@ def run_conversation(prompt):
     functions=functions,
     function_call="auto")
     st.write(response)
-    response_json = json.dumps(response,indent=2)
-    response_message = response_json["choices"][0]["message"]
+    #response_json = json.dumps(response,indent=2)
+    response_message = response.get("choices").get("message")#response_json["choices"][0]["message"]
 
     if response_message.get("function_call"):
         available_functions = {
