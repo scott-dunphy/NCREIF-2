@@ -195,8 +195,8 @@ def run_conversation(prompt):
                 "name": function_name,
                 "content": function_response,
             }
-        )  
-
+        )
+        
         second_response = openai.chat.completions.create(
         model="gpt-3.5-turbo-1106",
         messages=messages,
