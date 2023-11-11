@@ -199,7 +199,7 @@ def run_conversation(prompt):
             }
         )
         
-        second_response = openai.chat.completions.create(
+        second_response = client.chat.completions.create(
         model="gpt-3.5-turbo-1106",
         messages=messages,
                 )  # get a new response from the model where it can see the function response
