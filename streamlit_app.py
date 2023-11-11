@@ -213,11 +213,11 @@ query_input = st.text_input("Enter your query: ")
 df = pd.DataFrame()
 url = ''
 if query_input:
-    try:
-        df,url = run_conversation(query_input)
-        write_value = df
-    except:
-        write_value = "Error processing query. Please try again."
+    #try:
+    df,url = run_conversation(query_input)
+    write_value = df
+    #except:
+    #    write_value = "Error processing query. Please try again."
    
     
 st.write(write_value)
