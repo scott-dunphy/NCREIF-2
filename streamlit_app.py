@@ -179,7 +179,7 @@ def run_conversation(prompt):
     #response_json = json.dumps(response,indent=2)
     response_message = response.choices[0].message
 
-    if response_message.get("function_call"):
+    if response_message.function_call:
         available_functions = {
             "ncreif_api": ncreif_api,
         }  
