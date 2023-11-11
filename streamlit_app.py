@@ -22,8 +22,8 @@ def run_conversation(prompt):
     #prompt = input("What is your query?: ")
     messages = [{"role": "user", "content": f"{prompt}"},
                 {"role": "system", "content": """
-                # Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous.
-                # ...
+                 Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous.
+                 ...
                  Take a deep breath and go step-by-step.
                  1. You are running queries against an API. 
                  2. If the user asks about returns then exclude the 'select' parameter from the function
