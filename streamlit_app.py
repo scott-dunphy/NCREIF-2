@@ -183,9 +183,9 @@ def run_conversation(prompt):
         available_functions = {
             "ncreif_api": ncreif_api,
         }  
-        function_name = response_message["function_call"]["name"]
+        function_name = response_message.function_call.name
         fuction_to_call = available_functions[function_name]
-        function_args = json.loads(response_message["function_call"]["arguments"])
+        function_args = json.loads(response_message.function_call.arguments)
         function_response = fuction_to_call(
             url=function_args.get("url"),
         )
