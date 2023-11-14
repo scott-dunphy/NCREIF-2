@@ -201,7 +201,7 @@ def run_conversation(prompt):
         #model="gpt-3.5-turbo-1106",
         #messages=messages,
         #        )  # get a new response from the model where it can see the function response
-        st.write(function_response)
+        #st.write(function_response)
         return function_response
         
 st.set_page_config(page_title='AI-POWERED NCREIF QUERY TOOL')
@@ -214,11 +214,11 @@ query_input = st.text_input("Enter your query: ")
 df = pd.DataFrame()
 url = ''
 if query_input:
-    #try:
-    df,url = run_conversation(query_input)
-    write_value = df
-    #except:
-    #    write_value = "Error processing query. Please try again."
+    try:
+        df,url = run_conversation(query_input)
+        write_value = df
+    except:
+        write_value = "Error processing query. Please try again."
    
     
 st.write(write_value)
