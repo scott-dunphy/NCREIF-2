@@ -237,7 +237,7 @@ if len(df) > 0:
 # Ensure url is not None or empty before trying to parse it
 if url != '':
     st.header("API URL and Parameters")
-    st.write(url + "\n")
+    st.write(url[:len(url)-47] + "\n")
     # Parse the URL
     parsed_url = urlparse(url)
     query_params = parse_qs(parsed_url.query)
